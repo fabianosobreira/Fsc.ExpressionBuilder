@@ -40,7 +40,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             expression.Left.Should().BeNullChecking(propertyName);
             expression.NodeType.Should().Be(ExpressionType.AndAlso);
 
-            expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, comparisonType, value, false);
+            expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, comparisonType, value, false, false);
 
             //Testing the operation execution
             var lambda = Expression.Lambda<Func<Person, bool>>(expression, param);
@@ -52,12 +52,12 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 
         public Func<Person, bool> IsEmpty()
         {
-            return x => x.Birth != null && (x.Birth.Country != null && x.Birth.Country.Trim().ToLower() == string.Empty);
+            return x => x.Birth != null && (x.Birth.Country != null && x.Birth.Country == string.Empty);
         }
 
         public Func<Person, bool> IsNotEmpty()
         {
-            return x => x.Birth != null && (x.Birth.Country != null && x.Birth.Country.Trim().ToLower() != string.Empty);
+            return x => x.Birth != null && (x.Birth.Country != null && x.Birth.Country != string.Empty);
         }
     }
 }

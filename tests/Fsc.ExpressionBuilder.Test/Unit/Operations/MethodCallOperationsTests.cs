@@ -44,10 +44,10 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             var method = contains.Method as MethodInfo;
             method.Name.Should().Be(methodName);
 
-            var property = contains.Object.ExtractTrimToLowerProperty(propertyName);
+            var property = (MemberExpression)contains.Object;
             property.Member.Name.Should().Be(propertyName);
 
-            var constant = contains.Arguments.First().ExtractTrimToLowerConstant();
+            var constant = (ConstantExpression)contains.Arguments.First();
             constant.Value.Should().Be(value);
 
             //Testing the operation execution
@@ -60,17 +60,17 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 
         public Func<Person, bool> Contains(string value)
         {
-            return x => x.Name.Trim().ToLower().Contains(value.Trim().ToLower());
+            return x => x.Name.Contains(value);
         }
 
         public Func<Person, bool> EndsWith(string value)
         {
-            return x => x.Name.Trim().ToLower().EndsWith(value.Trim().ToLower());
+            return x => x.Name.EndsWith(value);
         }
 
         public Func<Person, bool> StartsWith(string value)
         {
-            return x => x.Name.Trim().ToLower().StartsWith(value.Trim().ToLower());
+            return x => x.Name.StartsWith(value);
         }
     }
 }

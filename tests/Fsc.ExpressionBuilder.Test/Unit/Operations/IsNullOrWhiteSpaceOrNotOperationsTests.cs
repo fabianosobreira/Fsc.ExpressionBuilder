@@ -40,7 +40,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             var isEmpty = (BinaryExpression)expression.Right;
             isEmpty.Left.Should().BeNullChecking(propertyName);
             isEmpty.NodeType.Should().Be(ExpressionType.AndAlso);
-            isEmpty.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.Equal, value, false);
+            isEmpty.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.Equal, value, true, false);
 
             //Testing the operation execution
             var lambda = Expression.Lambda<Func<Person, bool>>(expression, param);
@@ -66,7 +66,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             //Testing the operation structure
             expression.Left.Should().BeNullChecking(propertyName, false);
             expression.NodeType.Should().Be(ExpressionType.AndAlso);
-            expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.NotEqual, value, false);
+            expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.NotEqual, value, true, false);
 
             //Testing the operation execution
             var lambda = Expression.Lambda<Func<Person, bool>>(expression, param);

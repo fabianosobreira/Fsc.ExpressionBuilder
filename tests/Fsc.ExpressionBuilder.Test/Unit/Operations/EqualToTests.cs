@@ -19,7 +19,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             TestData = new TestData();
         }
 
-        [TestCase("Name", " John doe ", TestName = "'EqualTo' operation - Get expression (string value)")]
+        [TestCase("Name", "John Doe", TestName = "'EqualTo' operation - Get expression (string value)")]
         [TestCase("Salary", 3500D, TestName = "'EqualTo' operation - Get expression (Failure: string property with integer value)")]
         public void GetExpressionStringValueTest(string propertyName, object value)
         {
@@ -35,7 +35,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             {
                 expression.Left.Should().BeNullChecking(propertyName);
                 expression.NodeType.Should().Be(ExpressionType.AndAlso);
-                expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.Equal, value);
+                expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.Equal, value, false, false);
             }
             else
             {

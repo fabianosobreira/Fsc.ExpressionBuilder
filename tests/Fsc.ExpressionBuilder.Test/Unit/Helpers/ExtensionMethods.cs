@@ -34,17 +34,17 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Helpers
             return new AndConstraint<ObjectAssertions>(should);
         }
 
-        public static AndConstraint<ObjectAssertions> BeAStringExpressionCheckingIf(this ObjectAssertions should, string propertyName, ExpressionType expressionType, object value, bool trimToLowerValue = true)
+        public static AndConstraint<ObjectAssertions> BeAStringExpressionCheckingIf(this ObjectAssertions should, string propertyName, ExpressionType expressionType, object value, bool trimToLowerProperty, bool trimToLowerValue)
         {
             Assert.That(should.Subject, Is.AssignableTo<Expression>());
             var expression = (BinaryExpression)should.Subject;
 
-            var property = expression.Left.ExtractTrimToLowerProperty(propertyName);
+            var property = (MemberExpression)(trimToLowerProperty ? expression.Left.ExtractTrimToLowerProperty(propertyName) : expression.Left);
             property.Member.Name.Should().Be(propertyName);
 
             Assert.That(expression.NodeType, Is.EqualTo(expressionType));
 
-            var constant = trimToLowerValue ? expression.Right.ExtractTrimToLowerConstant() : (ConstantExpression)expression.Right;
+            var constant = (ConstantExpression)(trimToLowerValue ? expression.Right.ExtractTrimToLowerConstant() : expression.Right);
             constant.Value.Should().Be(value);
 
             return new AndConstraint<ObjectAssertions>(should);

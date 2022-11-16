@@ -93,10 +93,10 @@ namespace Fsc.ExpressionBuilder.Test.Integration
         public void BuilderWithPropertyListFilterStatements()
         {
             var filter = new Filter<Person>();
-            filter.By("Contacts[Type]", Operation.EqualTo, ContactType.Email).And.By("Birth.Country", Operation.StartsWith, " usa ");
+            filter.By("Contacts[Type]", Operation.EqualTo, ContactType.Email).And.By("Birth.Country", Operation.StartsWith, "usa");
             var people = People.Where(filter);
             var solution = People.Where(p => p.Contacts.Any(c => c.Type == ContactType.Email) &&
-                                             (p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim().ToLower().StartsWith("usa")));
+                                             (p.Birth != null && p.Birth.Country != null && p.Birth.Country.StartsWith("usa")));
             Assert.That(people, Is.EquivalentTo(solution));
         }
 
@@ -124,12 +124,12 @@ namespace Fsc.ExpressionBuilder.Test.Integration
         public void BuilderWithBetweenAndSimpleFilterStatements()
         {
             var filter = new Filter<Person>();
-            filter.By("Id", Operation.Between, 2, 6).And.By("Birth.Country", Operation.EqualTo, " usa ");
+            filter.By("Id", Operation.Between, 2, 6).And.By("Birth.Country", Operation.EqualTo, "usa");
             var people = People.Where(filter);
             var solution = People.Where(p => (p.Id >= 2 && p.Id <= 6) &&
-                                             (p.Birth != null && p.Birth.Country.Trim().ToLower().StartsWith("usa")));
+                                             (p.Birth != null && p.Birth.Country.StartsWith("usa")));
             Assert.That(people, Is.EquivalentTo(solution));
-            Assert.That(people.All(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim().ToLower() == "usa"), Is.True);
+            Assert.That(people.All(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country == "usa"), Is.True);
         }
 
         [TestCase(TestName = "Builder with a single filter statement using a between operation and a list of values statement")]
@@ -190,7 +190,7 @@ namespace Fsc.ExpressionBuilder.Test.Integration
             var filter = new Filter<Person>();
             filter.By("Birth.Country", Operation.IsEmpty, null, (object)null, Connector.And);
             var people = People.Where(filter);
-            var solution = People.Where(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim() == string.Empty);
+            var solution = People.Where(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country == string.Empty);
             Assert.That(people, Is.EquivalentTo(solution));
         }
 
@@ -200,7 +200,7 @@ namespace Fsc.ExpressionBuilder.Test.Integration
             var filter = new Filter<Person>();
             filter.By("Birth.Country", Operation.IsNotEmpty);
             var people = People.Where(filter);
-            var solution = People.Where(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim() != string.Empty);
+            var solution = People.Where(p => p.Birth != null && p.Birth.Country != null && p.Birth.Country != string.Empty);
             Assert.That(people, Is.EquivalentTo(solution));
         }
 
@@ -294,11 +294,11 @@ namespace Fsc.ExpressionBuilder.Test.Integration
         public void BuilderUsingComplexExpressionsFluentInterface()
         {
             var filter = new Filter<Person>();
-            filter.By("Birth.Country", Operation.EqualTo, "USA").And.By("Name", Operation.DoesNotContain, "doe")
+            filter.By("Birth.Country", Operation.EqualTo, "USA").And.By("Name", Operation.DoesNotContain, "Doe")
                 .Or
                 .Group.By("Name", Operation.EndsWith, "Doe").And.By("Birth.Country", Operation.IsNullOrWhiteSpace);
             var people = People.Where(filter);
-            var solution = People.Where(p => ((p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim().ToLower() == "usa") && !p.Name.Contains("Doe"))
+            var solution = People.Where(p => ((p.Birth != null && p.Birth.Country != null && p.Birth.Country == "USA") && !p.Name.Contains("Doe"))
                                 || (p.Name.EndsWith("Doe") && (p.Birth != null && string.IsNullOrWhiteSpace(p.Birth.Country))));
 
             Assert.That(people, Is.EquivalentTo(solution));
@@ -310,12 +310,12 @@ namespace Fsc.ExpressionBuilder.Test.Integration
             var filter = new Filter<Person>();
             filter.StartGroup();
             filter.By("Birth.Country", Operation.EqualTo, "USA", default(string), Connector.And);
-            filter.By("Name", Operation.DoesNotContain, "doe", default(string), Connector.Or);
+            filter.By("Name", Operation.DoesNotContain, "Doe", default(string), Connector.Or);
             filter.StartGroup();
             filter.By("Name", Operation.EndsWith, "Doe", default(string), Connector.And);
             filter.By("Birth.Country", Operation.IsNullOrWhiteSpace, default(string), default(string), Connector.And);
             var people = People.Where(filter);
-            var solution = People.Where(p => ((p.Birth != null && p.Birth.Country != null && p.Birth.Country.Trim().ToLower() == "usa") && !p.Name.Contains("Doe"))
+            var solution = People.Where(p => ((p.Birth != null && p.Birth.Country != null && p.Birth.Country == "USA") && !p.Name.Contains("Doe"))
                                 || (p.Name.EndsWith("Doe") && (p.Birth != null && string.IsNullOrWhiteSpace(p.Birth.Country))));
 
             Assert.That(people, Is.EquivalentTo(solution));
@@ -378,10 +378,10 @@ namespace Fsc.ExpressionBuilder.Test.Integration
         public void NestedPropertyDepthThree()
         {
             var filter = new Filter<Person>();
-            filter.By("Manager.Employer.Owner.Name", Operation.Contains, "smith");
+            filter.By("Manager.Employer.Owner.Name", Operation.Contains, "Smith");
             var people = People.Where(filter);
             var solution = People.Where(p => p.Manager != null && p.Manager.Employer != null
-                                                               && p.Manager.Employer.Owner.Name.Trim().ToLower().Contains("smith"));
+                                                               && p.Manager.Employer.Owner.Name.Contains("Smith"));
 
             Assert.That(people, Is.EquivalentTo(solution));
         }
@@ -401,10 +401,10 @@ namespace Fsc.ExpressionBuilder.Test.Integration
         public void NestedListPropertyDepthThree()
         {
             var filter = new Filter<Company>();
-            filter.By("Managers[Employer.Owner.Name]", Operation.Contains, "smith");
+            filter.By("Managers[Employer.Owner.Name]", Operation.Contains, "Smith");
             var companies = Companies.Where(filter);
             var solution = Companies.Where(c => c.Managers.Any(p => p.Employer != null
-                                                                    && p.Employer.Owner.Name.Trim().ToLower().Contains("smith")));
+                                                                    && p.Employer.Owner.Name.Contains("Smith")));
 
             Assert.That(companies, Is.EquivalentTo(solution));
         }

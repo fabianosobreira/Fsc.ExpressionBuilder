@@ -43,16 +43,16 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             var method = doesNotContain.Method as MethodInfo;
             method.Name.Should().Be("Contains");
 
-            var property = doesNotContain.Object.ExtractTrimToLowerProperty(propertyName);
+            var property = doesNotContain.Object as MemberExpression;
             property.Member.Name.Should().Be(propertyName);
 
-            var constant = doesNotContain.Arguments.First().ExtractTrimToLowerConstant();
+            var constant = doesNotContain.Arguments.First() as ConstantExpression;
             constant.Value.Should().Be(value);
 
             //Testing the operation execution
             var lambda = Expression.Lambda<Func<Person, bool>>(expression, param);
             var people = TestData.People.Where(lambda.Compile());
-            var solution = TestData.People.Where(x => !x.Name.Trim().ToLower().Contains("doe"));
+            var solution = TestData.People.Where(x => !x.Name.Trim().ToLower().Contains("Doe"));
             people.Should().BeEquivalentTo(solution);
         }
     }

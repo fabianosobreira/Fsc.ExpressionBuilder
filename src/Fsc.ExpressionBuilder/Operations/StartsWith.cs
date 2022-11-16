@@ -18,9 +18,7 @@ namespace Fsc.ExpressionBuilder.Operations
         /// <inheritdoc />
         public override Expression GetExpression(MemberExpression member, ConstantExpression constant1, ConstantExpression constant2)
         {
-            Expression constant = constant1.TrimToLower();
-
-            return Expression.Call(member.TrimToLower(), startsWithMethod, constant)
+            return Expression.Call(member, startsWithMethod, constant1)
                    .AddNullCheck(member);
         }
     }

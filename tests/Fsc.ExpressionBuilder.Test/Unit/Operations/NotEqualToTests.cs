@@ -35,7 +35,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
             {
                 expression.Left.Should().BeNullChecking(propertyName);
                 expression.NodeType.Should().Be(ExpressionType.AndAlso);
-                expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.NotEqual, value);
+                expression.Right.Should().BeAStringExpressionCheckingIf(propertyName, ExpressionType.NotEqual, value, false, false);
             }
             else
             {
@@ -52,7 +52,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 
         public Func<Person, bool> Name(string value)
         {
-            return x => x.Name.Trim().ToLower() != value.Trim().ToLower();
+            return x => x.Name != value;
         }
 
         public Func<Person, bool> Salary(double value)
