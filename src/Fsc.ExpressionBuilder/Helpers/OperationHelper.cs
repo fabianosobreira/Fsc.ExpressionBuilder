@@ -30,9 +30,7 @@ namespace Fsc.ExpressionBuilder.Helpers
         public static void LoadDefaultOperations()
         {
             var @interface = typeof(IOperation);
-            var operationsFound = AppDomain.CurrentDomain.GetAssemblies()
-                .Where(a => a.DefinedTypes.Any(t => t.Namespace == "Fsc.ExpressionBuilder.Operations"))
-                .SelectMany(s => s.GetTypes())
+            var operationsFound = @interface.Assembly.GetTypes()
                 .Where(p => @interface.IsAssignableFrom(p) && p.IsClass && !p.IsAbstract)
                 .Select(t => (IOperation)Activator.CreateInstance(t));
             _operations = new HashSet<IOperation>(operationsFound, new OperationEqualityComparer());
