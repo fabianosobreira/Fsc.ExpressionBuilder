@@ -1,1 +1,1 @@
-dotnet pack ExpressionBuilder\ExpressionBuilder.csproj -c Release
+dotnet pack src\Fsc.ExpressionBuilder\Fsc.ExpressionBuilder.csproj -c Release

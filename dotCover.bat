@@ -1,1 +1,0 @@
-packages\JetBrains.dotCover.CommandLineTools.2018.3.3\tools\dotCover.exe a dotCover.xml
