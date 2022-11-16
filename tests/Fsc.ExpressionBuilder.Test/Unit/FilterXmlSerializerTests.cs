@@ -26,11 +26,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit
 
             var sb = new StringBuilder();
             sb.Append("<?xml version=\"1.0\" encoding=\"utf-16\"?>");
-#if (NETSTANDARD2_0 || NETSTANDARD2_1 || NETSTANDARD2_2 || NETCOREAPP2_0 || NETCOREAPP2_1 || NETCOREAPP2_2)
-            sb.Append("<FilterOfPerson Type=\"Fsc.ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
-#else
-            sb.Append("<FilterOfPerson Type=\"Fsc.ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
-#endif
+            sb.Append("<FilterOfPerson Type=\"Fsc.ExpressionBuilder.Test.Models.Person, Fsc.ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
             sb.Append("  <Statements>");
             sb.Append("  <StatementsGroup>");
             sb.Append("    <FilterStatementOfInt32 Type=\"System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089\">");
@@ -39,11 +35,7 @@ namespace Fsc.ExpressionBuilder.Test.Unit
             sb.Append("      <Value>2</Value>");
             sb.Append("      <Connector>1</Connector>");
             sb.Append("    </FilterStatementOfInt32>");
-#if NETCOREAPP2_0
-            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
-#else
-            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
-#endif
+            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, Fsc.ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
             sb.Append("      <PropertyId>Gender</PropertyId>");
             sb.Append("      <Operation>EqualTo</Operation>");
             sb.Append("      <Value>Male</Value>");
