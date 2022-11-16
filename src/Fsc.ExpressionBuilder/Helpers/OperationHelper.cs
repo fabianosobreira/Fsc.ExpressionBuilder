@@ -53,7 +53,7 @@ namespace Fsc.ExpressionBuilder.Helpers
                 { TypeGroup.Text, new HashSet<Type> { typeof(string), typeof(char) } },
                 { TypeGroup.Number, new HashSet<Type> { typeof(int), typeof(uint), typeof(byte), typeof(sbyte), typeof(short), typeof(ushort), typeof(long), typeof(ulong), typeof(Single), typeof(double), typeof(decimal) } },
                 { TypeGroup.Boolean, new HashSet<Type> { typeof(bool) } },
-                { TypeGroup.Date, new HashSet<Type> { typeof(DateTime) } },
+                { TypeGroup.Date, new HashSet<Type> { typeof(DateTime), typeof(DateTimeOffset) } },
                 { TypeGroup.Nullable, new HashSet<Type> { typeof(Nullable<>), typeof(string) } }
             };
         }
