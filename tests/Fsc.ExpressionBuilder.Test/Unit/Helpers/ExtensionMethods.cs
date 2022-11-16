@@ -4,7 +4,7 @@ using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Test.Unit.Helpers
+namespace Fsc.ExpressionBuilder.Test.Unit.Helpers
 {
     public static class ExtensionMethods
     {

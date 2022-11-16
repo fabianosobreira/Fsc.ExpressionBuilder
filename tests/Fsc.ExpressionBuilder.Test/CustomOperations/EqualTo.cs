@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Interfaces;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Test.CustomOperations
+namespace Fsc.ExpressionBuilder.Test.CustomOperations
 {
     public class EqualTo : IOperation
     {

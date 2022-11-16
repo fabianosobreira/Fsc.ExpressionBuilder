@@ -1,13 +1,13 @@
-using ExpressionBuilder.Common;
-using ExpressionBuilder.Exceptions;
-using ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Exceptions;
+using Fsc.ExpressionBuilder.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Builders
+namespace Fsc.ExpressionBuilder.Builders
 {
     internal class FilterBuilder
     {

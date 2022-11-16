@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Operation representing a string "EndsWith" method call.

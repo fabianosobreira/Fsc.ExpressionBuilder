@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Generics;
-using ExpressionBuilder.Operations;
-using ExpressionBuilder.Test.Models;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Generics;
+using Fsc.ExpressionBuilder.Operations;
+using Fsc.ExpressionBuilder.Test.Models;
 using NUnit.Framework;
 using System;
 using System.IO;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace ExpressionBuilder.Test.Unit
+namespace Fsc.ExpressionBuilder.Test.Unit
 {
     [TestFixture]
     public class FilterXmlSerializerTests
@@ -27,9 +27,9 @@ namespace ExpressionBuilder.Test.Unit
             var sb = new StringBuilder();
             sb.Append("<?xml version=\"1.0\" encoding=\"utf-16\"?>");
 #if (NETSTANDARD2_0 || NETSTANDARD2_1 || NETSTANDARD2_2 || NETCOREAPP2_0 || NETCOREAPP2_1 || NETCOREAPP2_2)
-            sb.Append("<FilterOfPerson Type=\"ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
+            sb.Append("<FilterOfPerson Type=\"Fsc.ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
 #else
-            sb.Append("<FilterOfPerson Type=\"ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
+            sb.Append("<FilterOfPerson Type=\"Fsc.ExpressionBuilder.Test.Models.Person, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
 #endif
             sb.Append("  <Statements>");
             sb.Append("  <StatementsGroup>");
@@ -40,9 +40,9 @@ namespace ExpressionBuilder.Test.Unit
             sb.Append("      <Connector>1</Connector>");
             sb.Append("    </FilterStatementOfInt32>");
 #if NETCOREAPP2_0
-            sb.Append("    <FilterStatementOfPersonGender Type=\"ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
+            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test.NetCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
 #else
-            sb.Append("    <FilterStatementOfPersonGender Type=\"ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
+            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\">");
 #endif
             sb.Append("      <PropertyId>Gender</PropertyId>");
             sb.Append("      <Operation>EqualTo</Operation>");
@@ -112,7 +112,7 @@ namespace ExpressionBuilder.Test.Unit
 
             //Checking the statements list
             var root = xmlDoc.DocumentElement;
-            Assert.That(root.Attributes["Type"].Value, Does.StartWith("ExpressionBuilder.Test.Models.PersonGender"));
+            Assert.That(root.Attributes["Type"].Value, Does.StartWith("Fsc.ExpressionBuilder.Test.Models.PersonGender"));
             Assert.That(root.SelectSingleNode("PropertyId").InnerText, Is.EqualTo("Gender"));
             Assert.That(root.SelectSingleNode("Operation").InnerText, Is.EqualTo("EqualTo"));
             Assert.That(root.SelectSingleNode("Value").InnerText, Is.EqualTo("Male"));
@@ -170,7 +170,7 @@ namespace ExpressionBuilder.Test.Unit
             //Checking the filter XML element
             var root = xmlDoc.DocumentElement;
             Assert.That(root.Name, Is.EqualTo("FilterOfPerson"));
-            Assert.That(root.GetAttribute("Type"), Does.StartWith("ExpressionBuilder.Test.Models.Person"));
+            Assert.That(root.GetAttribute("Type"), Does.StartWith("Fsc.ExpressionBuilder.Test.Models.Person"));
             Assert.That(root.ChildNodes.Count, Is.EqualTo(1));
             Assert.That(root.FirstChild.Name, Is.EqualTo("Statements"));
             Assert.That(root.FirstChild.ChildNodes.Count, Is.EqualTo(1));
@@ -221,7 +221,7 @@ namespace ExpressionBuilder.Test.Unit
         public void DeserializeXmlIntoFilterStatementObjectWithEnumValue()
         {
             var sb = new StringBuilder();
-            sb.Append("    <FilterStatementOfPersonGender Type=\"ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test, Version=1.0.6330.24179, Culture=neutral, PublicKeyToken=null\">");
+            sb.Append("    <FilterStatementOfPersonGender Type=\"Fsc.ExpressionBuilder.Test.Models.PersonGender, ExpressionBuilder.Test, Version=1.0.6330.24179, Culture=neutral, PublicKeyToken=null\">");
             sb.Append("      <PropertyId>Gender</PropertyId>");
             sb.Append("      <Operation>EqualTo</Operation>");
             sb.Append("      <Value>Male</Value>");

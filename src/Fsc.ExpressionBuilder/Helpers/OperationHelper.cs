@@ -1,12 +1,12 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Configuration;
-using ExpressionBuilder.Exceptions;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Configuration;
+using Fsc.ExpressionBuilder.Exceptions;
+using Fsc.ExpressionBuilder.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExpressionBuilder.Helpers
+namespace Fsc.ExpressionBuilder.Helpers
 {
     /// <summary>
     /// Useful methods regarding <seealso cref="IOperation"></seealso>.
@@ -31,7 +31,7 @@ namespace ExpressionBuilder.Helpers
         {
             var @interface = typeof(IOperation);
             var operationsFound = AppDomain.CurrentDomain.GetAssemblies()
-                .Where(a => a.DefinedTypes.Any(t => t.Namespace == "ExpressionBuilder.Operations"))
+                .Where(a => a.DefinedTypes.Any(t => t.Namespace == "Fsc.ExpressionBuilder.Operations"))
                 .SelectMany(s => s.GetTypes())
                 .Where(p => @interface.IsAssignableFrom(p) && p.IsClass && !p.IsAbstract)
                 .Select(t => (IOperation)Activator.CreateInstance(t));

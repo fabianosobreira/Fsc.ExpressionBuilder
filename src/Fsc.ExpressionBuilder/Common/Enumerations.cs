@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpressionBuilder.Common
+namespace Fsc.ExpressionBuilder.Common
 {
     /// <summary>
     /// Defines how the filter statements will be connected to each other.

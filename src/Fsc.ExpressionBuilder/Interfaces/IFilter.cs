@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Common;
 
-namespace ExpressionBuilder.Interfaces
+namespace Fsc.ExpressionBuilder.Interfaces
 {
     /// <summary>
     /// Defines a filter from which a expression will be built.

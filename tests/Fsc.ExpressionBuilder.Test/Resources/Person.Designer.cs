@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ExpressionBuilder.Test.Resources {
+namespace Fsc.ExpressionBuilder.Test.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ExpressionBuilder.Test.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ExpressionBuilder.Test.Resources.Person", typeof(Person).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fsc.ExpressionBuilder.Test.Resources.Person", typeof(Person).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

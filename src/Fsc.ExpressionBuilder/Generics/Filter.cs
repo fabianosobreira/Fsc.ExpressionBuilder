@@ -1,6 +1,6 @@
-﻿using ExpressionBuilder.Builders;
-using ExpressionBuilder.Common;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Builders;
+using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-namespace ExpressionBuilder.Generics
+namespace Fsc.ExpressionBuilder.Generics
 {
     /// <summary>
     /// Aggregates <see cref="FilterStatement{TPropertyType}" /> and build them into a LINQ expression.

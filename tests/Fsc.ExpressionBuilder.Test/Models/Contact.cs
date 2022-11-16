@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpressionBuilder.Test.Models
+namespace Fsc.ExpressionBuilder.Test.Models
 {
 	public enum ContactType
 	{

@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Helpers;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Helpers;
+using Fsc.ExpressionBuilder.Interfaces;
 using System.Collections.Generic;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Exposes the default operations supported by the <seealso cref="Builders.FilterBuilder" />.

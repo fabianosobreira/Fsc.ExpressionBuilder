@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ExpressionBuilder.Exceptions
+namespace Fsc.ExpressionBuilder.Exceptions
 {
     /// <summary>
     /// Represents an attempt to instantiate an operation that was not loaded.

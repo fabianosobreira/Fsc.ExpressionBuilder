@@ -1,5 +1,5 @@
-﻿using ExpressionBuilder.Test.Models;
-using ExpressionBuilder.Test.Unit.Helpers;
+﻿using Fsc.ExpressionBuilder.Test.Models;
+using Fsc.ExpressionBuilder.Test.Unit.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Test.Unit.Operations
+namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 {
     [TestFixture]
     public class DoesNotContainTests
@@ -24,7 +24,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         {
             var propertyName = "Name";
             var value = "Doe ";
-            var operation = new ExpressionBuilder.Operations.DoesNotContain();
+            var operation = new Fsc.ExpressionBuilder.Operations.DoesNotContain();
             var param = Expression.Parameter(typeof(Person), "x");
             var member = Expression.Property(param, propertyName);
             var constant1 = Expression.Constant(value);

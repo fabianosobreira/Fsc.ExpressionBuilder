@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExpressionBuilder.Test.Models
+namespace Fsc.ExpressionBuilder.Test.Models
 {
     public enum PersonGender
     {

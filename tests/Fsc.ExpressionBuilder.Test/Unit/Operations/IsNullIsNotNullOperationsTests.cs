@@ -1,13 +1,13 @@
-﻿using ExpressionBuilder.Interfaces;
-using ExpressionBuilder.Test.Models;
-using ExpressionBuilder.Test.Unit.Helpers;
+﻿using Fsc.ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Test.Models;
+using Fsc.ExpressionBuilder.Test.Unit.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Test.Unit.Operations
+namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 {
     [TestFixture]
     public class IsNullIsNotNullOperationsTests
@@ -26,7 +26,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
             var propertyName = "Country";
             string value = null;
             var type = typeof(IFilter).Assembly.Types()
-                .Single(t => t.FullName == "ExpressionBuilder.Operations." + methodName);
+                .Single(t => t.FullName == "Fsc.ExpressionBuilder.Operations." + methodName);
             var operation = (IOperation)Activator.CreateInstance(type);
             var param = Expression.Parameter(typeof(Person), "x");
             var parent = Expression.Property(param, "Birth");

@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace ExpressionBuilder.Helpers
+namespace Fsc.ExpressionBuilder.Helpers
 {
     internal class OperationEqualityComparer : IEqualityComparer<IOperation>
     {

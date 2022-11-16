@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using ExpressionBuilder.Operations;
+using Fsc.ExpressionBuilder.Operations;
 
-namespace ExpressionBuilder.Interfaces
+namespace Fsc.ExpressionBuilder.Interfaces
 {
     /// <summary>
     /// Useful methods regarding <seealso cref="IOperation"></seealso>.

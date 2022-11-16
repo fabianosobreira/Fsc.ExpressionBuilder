@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Operation representing a check for an empty string.

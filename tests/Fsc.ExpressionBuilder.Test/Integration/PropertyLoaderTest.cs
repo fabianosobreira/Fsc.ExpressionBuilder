@@ -1,6 +1,6 @@
-﻿using ExpressionBuilder.Interfaces;
-using ExpressionBuilder.Resources;
-using ExpressionBuilder.Test.Models;
+﻿using Fsc.ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Resources;
+using Fsc.ExpressionBuilder.Test.Models;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading;
 
-namespace ExpressionBuilder.Test.Integration
+namespace Fsc.ExpressionBuilder.Test.Integration
 {
     [TestFixture]
     public class PropertyLoaderTest

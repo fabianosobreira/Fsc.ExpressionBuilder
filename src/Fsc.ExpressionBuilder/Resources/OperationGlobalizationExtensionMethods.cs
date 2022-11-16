@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Interfaces;
 using System.Resources;
 
-namespace ExpressionBuilder.Resources
+namespace Fsc.ExpressionBuilder.Resources
 {
     /// <summary>
     /// Extension methods for <see cref="IOperation" />.

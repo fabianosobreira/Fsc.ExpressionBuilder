@@ -1,10 +1,10 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System;
 using System.Collections;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Operation representing a list "Contains" method call.

@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Generics;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Generics;
+using Fsc.ExpressionBuilder.Interfaces;
 using System;
 
-namespace ExpressionBuilder
+namespace Fsc.ExpressionBuilder
 {
     /// <summary>
     /// </summary>

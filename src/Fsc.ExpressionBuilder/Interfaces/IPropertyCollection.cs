@@ -1,10 +1,10 @@
-﻿using ExpressionBuilder.Resources;
+﻿using Fsc.ExpressionBuilder.Resources;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Resources;
 
-namespace ExpressionBuilder.Interfaces
+namespace Fsc.ExpressionBuilder.Interfaces
 {
     /// <summary>
     /// Collection of <see cref="Property" />.

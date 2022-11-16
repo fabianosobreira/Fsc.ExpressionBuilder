@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System.Xml.Serialization;
 
-namespace ExpressionBuilder.Interfaces
+namespace Fsc.ExpressionBuilder.Interfaces
 {
     /// <summary>
     /// Defines how a property should be filtered.

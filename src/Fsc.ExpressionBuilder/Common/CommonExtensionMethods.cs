@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Common
+namespace Fsc.ExpressionBuilder.Common
 {
     public static class CommonExtensionMethods
     {

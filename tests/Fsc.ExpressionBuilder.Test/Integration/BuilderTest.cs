@@ -1,16 +1,16 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Exceptions;
-using ExpressionBuilder.Generics;
-using ExpressionBuilder.Operations;
-using ExpressionBuilder.Test.Models;
-using ExpressionBuilder.Test.Unit.Helpers;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Exceptions;
+using Fsc.ExpressionBuilder.Generics;
+using Fsc.ExpressionBuilder.Operations;
+using Fsc.ExpressionBuilder.Test.Models;
+using Fsc.ExpressionBuilder.Test.Unit.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExpressionBuilder.Test.Integration
+namespace Fsc.ExpressionBuilder.Test.Integration
 {
     [TestFixture]
     public class BuilderTest

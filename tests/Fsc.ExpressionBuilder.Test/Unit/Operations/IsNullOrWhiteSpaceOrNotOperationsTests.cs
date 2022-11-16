@@ -1,14 +1,14 @@
-﻿using ExpressionBuilder.Interfaces;
-using ExpressionBuilder.Operations;
-using ExpressionBuilder.Test.Models;
-using ExpressionBuilder.Test.Unit.Helpers;
+﻿using Fsc.ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Operations;
+using Fsc.ExpressionBuilder.Test.Models;
+using Fsc.ExpressionBuilder.Test.Unit.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Test.Unit.Operations
+namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 {
     [TestFixture]
     public class IsNullOrWhiteSpaceOrNotOperationsTests

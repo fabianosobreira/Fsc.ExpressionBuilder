@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using System.Data.Common;
 
-namespace ExpressionBuilder.Test.Database
+namespace Fsc.ExpressionBuilder.Test.Database
 {
     [TestFixture(Category = "Database")]
     public abstract class DatabaseTest

@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Interfaces;
 
-namespace ExpressionBuilder.Generics
+namespace Fsc.ExpressionBuilder.Generics
 {
     /// <summary>
     /// Connects to FilterStatement together.

@@ -1,12 +1,12 @@
-﻿using ExpressionBuilder.Helpers;
-using ExpressionBuilder.Resources;
+﻿using Fsc.ExpressionBuilder.Helpers;
+using Fsc.ExpressionBuilder.Resources;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading;
 
-namespace ExpressionBuilder.Test.Integration
+namespace Fsc.ExpressionBuilder.Test.Integration
 {
     [TestFixture]
     public class OperationTests

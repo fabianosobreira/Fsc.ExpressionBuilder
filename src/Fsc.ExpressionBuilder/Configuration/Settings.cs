@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Common;
 using Microsoft.Extensions.Configuration;
 
-namespace ExpressionBuilder.Configuration
+namespace Fsc.ExpressionBuilder.Configuration
 {
     public class Settings
     {

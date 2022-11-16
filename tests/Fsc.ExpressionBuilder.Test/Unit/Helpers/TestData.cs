@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Test.Models;
+﻿using Fsc.ExpressionBuilder.Test.Models;
 using System;
 using System.Collections.Generic;
 
-namespace ExpressionBuilder.Test.Unit.Helpers
+namespace Fsc.ExpressionBuilder.Test.Unit.Helpers
 {
     public class TestData
     {

@@ -1,13 +1,13 @@
-﻿using ExpressionBuilder.Exceptions;
-using ExpressionBuilder.Helpers;
-using ExpressionBuilder.Interfaces;
-using ExpressionBuilder.Test.CustomOperations;
+﻿using Fsc.ExpressionBuilder.Exceptions;
+using Fsc.ExpressionBuilder.Helpers;
+using Fsc.ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Test.CustomOperations;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExpressionBuilder.Test.Unit
+namespace Fsc.ExpressionBuilder.Test.Unit
 {
     [TestFixture]
     public class HelperTests
@@ -115,7 +115,7 @@ namespace ExpressionBuilder.Test.Unit
             helper.LoadOperations(operations);
 
             Assert.That(helper.Operations.Where(o => o.Name == operations.First().Name).Count, Is.EqualTo(1));
-            Assert.That(helper.Operations.Single(o => o.Name == "EqualTo").GetType().Namespace, Is.EqualTo("ExpressionBuilder.Operations"));
+            Assert.That(helper.Operations.Single(o => o.Name == "EqualTo").GetType().Namespace, Is.EqualTo("Fsc.ExpressionBuilder.Operations"));
             Assert.That(helper.Operations.Count, Is.EqualTo(operationsCount + 1));
 
             OperationHelper.LoadDefaultOperations();
@@ -130,7 +130,7 @@ namespace ExpressionBuilder.Test.Unit
             helper.LoadOperations(operations, true);
 
             Assert.That(helper.Operations.Where(o => o.Name == "EqualTo").Count, Is.EqualTo(2));
-            Assert.That(helper.Operations.First(o => o.Name == "EqualTo" && o.Active).GetType().Namespace, Is.EqualTo("ExpressionBuilder.Test.CustomOperations"));
+            Assert.That(helper.Operations.First(o => o.Name == "EqualTo" && o.Active).GetType().Namespace, Is.EqualTo("Fsc.ExpressionBuilder.Test.CustomOperations"));
             Assert.That(helper.Operations.Count, Is.EqualTo(operationsCount + 1));
 
             OperationHelper.LoadDefaultOperations();
@@ -142,7 +142,7 @@ namespace ExpressionBuilder.Test.Unit
             var operation = new OperationHelper().GetOperationByName("EqualTo");
             Assert.That(operation.Name, Is.EqualTo("EqualTo"));
             Assert.That(operation.Active, Is.True);
-            Assert.That(operation.GetType().Namespace, Is.EqualTo("ExpressionBuilder.Operations"));
+            Assert.That(operation.GetType().Namespace, Is.EqualTo("Fsc.ExpressionBuilder.Operations"));
         }
 
         [TestCase(TestName = "Getting an overwritten operation by it's name")]
@@ -156,7 +156,7 @@ namespace ExpressionBuilder.Test.Unit
 
             Assert.That(operation.Name, Is.EqualTo("EqualTo"));
             Assert.That(operation.Active, Is.True);
-            Assert.That(operation.GetType().Namespace, Is.EqualTo("ExpressionBuilder.Test.CustomOperations"));
+            Assert.That(operation.GetType().Namespace, Is.EqualTo("Fsc.ExpressionBuilder.Test.CustomOperations"));
 
             OperationHelper.LoadDefaultOperations();
         }

@@ -1,9 +1,9 @@
 ﻿using System;
-using ExpressionBuilder.Common;
-using ExpressionBuilder.Interfaces;
+using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Interfaces;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Base class for operations.

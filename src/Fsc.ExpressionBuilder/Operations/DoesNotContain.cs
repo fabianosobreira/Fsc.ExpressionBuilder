@@ -1,8 +1,8 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Operation that checks for the non-existence of a substring within another string.

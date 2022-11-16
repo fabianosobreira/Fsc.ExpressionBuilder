@@ -1,5 +1,5 @@
-﻿using ExpressionBuilder.Test.Models;
-using ExpressionBuilder.Test.Unit.Helpers;
+﻿using Fsc.ExpressionBuilder.Test.Models;
+using Fsc.ExpressionBuilder.Test.Unit.Helpers;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace ExpressionBuilder.Test.Unit.Operations
+namespace Fsc.ExpressionBuilder.Test.Unit.Operations
 {
     [TestFixture]
     public class InTests
@@ -24,7 +24,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         public void GetExpressionTest()
         {
             var value = new List<string> { "USA", "AUS" };
-            var operation = new ExpressionBuilder.Operations.In();
+            var operation = new Fsc.ExpressionBuilder.Operations.In();
             var param = Expression.Parameter(typeof(Person), "x");
             var parent = Expression.Property(param, "Birth");
             var member = Expression.Property(parent, "Country");
@@ -54,7 +54,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         public void ShouldDealNicelyWithListOfNullables()
         {
             var value = new List<long?> { 123, null };
-            var operation = new ExpressionBuilder.Operations.In();
+            var operation = new Fsc.ExpressionBuilder.Operations.In();
             var param = Expression.Parameter(typeof(Person), "x");
             var member = Expression.Property(param, "EmployeeReferenceNumber");
             var constant1 = Expression.Constant(value);
@@ -70,7 +70,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         public void ShouldDealNicelyWithListOfNullablesAgainstNonnullableMember()
         {
             var value = new List<long?> { 123, null };
-            var operation = new ExpressionBuilder.Operations.In();
+            var operation = new Fsc.ExpressionBuilder.Operations.In();
             var param = Expression.Parameter(typeof(Person), "x");
             var parent = Expression.Property(param, "EmployeeReferenceNumber");
             var member = Expression.Property(parent, "Value");
@@ -87,7 +87,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         public void GetExpressionWithNonListConstant_Failure()
         {
             var value = "USA";
-            var operation = new ExpressionBuilder.Operations.In();
+            var operation = new Fsc.ExpressionBuilder.Operations.In();
             var param = Expression.Parameter(typeof(Person), "x");
             var parent = Expression.Property(param, "Birth");
             var member = Expression.Property(parent, "Country");
@@ -101,7 +101,7 @@ namespace ExpressionBuilder.Test.Unit.Operations
         public void GetExpressionWithNonGenericListConstant_Failure()
         {
             var value = new System.Collections.ArrayList { "USA", "UAS" };
-            var operation = new ExpressionBuilder.Operations.In();
+            var operation = new Fsc.ExpressionBuilder.Operations.In();
             var param = Expression.Parameter(typeof(Person), "x");
             var parent = Expression.Property(param, "Birth");
             var member = Expression.Property(parent, "Country");

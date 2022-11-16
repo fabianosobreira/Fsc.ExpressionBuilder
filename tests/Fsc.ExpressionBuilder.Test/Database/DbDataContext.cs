@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
-namespace ExpressionBuilder.Test.Database
+namespace Fsc.ExpressionBuilder.Test.Database
 {
     public class DbDataContext : DbContext
     {

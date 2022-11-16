@@ -1,11 +1,11 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Generics;
-using ExpressionBuilder.Operations;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Generics;
+using Fsc.ExpressionBuilder.Operations;
 using NUnit.Framework;
 using System;
 using System.Linq;
 
-namespace ExpressionBuilder.Test.Database
+namespace Fsc.ExpressionBuilder.Test.Database
 {
     [TestFixture(Category = "Database")]
     public class BuilderTest : DatabaseTest

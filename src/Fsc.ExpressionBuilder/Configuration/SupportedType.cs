@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System;
 
-namespace ExpressionBuilder.Configuration
+namespace Fsc.ExpressionBuilder.Configuration
 {
     public class SupportedType
     {

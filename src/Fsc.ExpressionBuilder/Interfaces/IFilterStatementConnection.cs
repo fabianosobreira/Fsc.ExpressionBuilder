@@ -1,4 +1,4 @@
-﻿namespace ExpressionBuilder.Interfaces
+﻿namespace Fsc.ExpressionBuilder.Interfaces
 {
     /// <summary>
     /// Connects to FilterStatement together.

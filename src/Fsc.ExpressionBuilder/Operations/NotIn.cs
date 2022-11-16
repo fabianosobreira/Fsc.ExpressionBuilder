@@ -1,9 +1,9 @@
-﻿using ExpressionBuilder.Common;
+﻿using Fsc.ExpressionBuilder.Common;
 using System;
 using System.Collections;
 using System.Linq.Expressions;
 
-namespace ExpressionBuilder.Operations
+namespace Fsc.ExpressionBuilder.Operations
 {
     /// <summary>
     /// Operation representing the inverse of a list "Contains" method call.

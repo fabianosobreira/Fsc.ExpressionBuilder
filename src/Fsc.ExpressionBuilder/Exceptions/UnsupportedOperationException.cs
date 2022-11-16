@@ -1,7 +1,7 @@
-﻿using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Interfaces;
 using System;
 
-namespace ExpressionBuilder.Exceptions
+namespace Fsc.ExpressionBuilder.Exceptions
 {
     /// <summary>
     /// Represents an attempt to use an operation not currently supported by a type.

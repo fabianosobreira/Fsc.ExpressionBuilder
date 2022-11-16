@@ -1,13 +1,13 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Generics;
-using ExpressionBuilder.Operations;
-using ExpressionBuilder.Test.Models;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Generics;
+using Fsc.ExpressionBuilder.Operations;
+using Fsc.ExpressionBuilder.Test.Models;
 using FluentAssertions;
 using NUnit.Framework;
 using System;
 using System.Linq;
 
-namespace ExpressionBuilder.Test.Unit
+namespace Fsc.ExpressionBuilder.Test.Unit
 {
     [TestFixture]
     public class FilterTest

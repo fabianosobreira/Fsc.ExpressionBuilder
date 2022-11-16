@@ -1,13 +1,13 @@
-﻿using ExpressionBuilder.Common;
-using ExpressionBuilder.Exceptions;
-using ExpressionBuilder.Helpers;
-using ExpressionBuilder.Interfaces;
+﻿using Fsc.ExpressionBuilder.Common;
+using Fsc.ExpressionBuilder.Exceptions;
+using Fsc.ExpressionBuilder.Helpers;
+using Fsc.ExpressionBuilder.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Schema;
 
-namespace ExpressionBuilder.Generics
+namespace Fsc.ExpressionBuilder.Generics
 {
     /// <summary>
 	/// Defines how a property should be filtered.
